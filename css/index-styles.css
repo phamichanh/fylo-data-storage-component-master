@@ -25,17 +25,62 @@ body, html {
 body {
   font-family: 'Raleway', sans-serif;
   background-color: hsl(229, 57%, 11%);
-  background-image: url("../images/bg-desktop.png");
-  background-repeat: no-repeat;
-  background-size: 100% 50%;
-  background-position: bottom;
 }
 
 /*-----------------------------------------------------*/
+@media only screen and (max-width: 375px) {
+  /* For Mobile (max 375px) */
+  body {
+    background-image: url("../images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  #wrapper {
+    width: 325px;
+    height: auto;
+  }
+
+  #action-box {
+    width: calc(100% - 80px);
+  }
+
+  #storage-info-box {
+    width: calc(100% - 80px);
+    height: 80px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 376px) {
+  /* For Desktop (min 375px) */
+
+  body {
+    background-image: url("../images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    background-position: bottom;
+  }
+
+  #wrapper {
+    width: 920px;
+    height: 200px;
+  }
+
+  #action-box {
+    width: 270px;
+  }
+
+  #storage-info-box {
+    width: 460px;
+    height: 75px;
+    margin-top: 45px;
+    margin-left: 30px;
+  }
+
+}
 
 #wrapper {
-  width: 920px;
-  height: 200px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,7 +90,6 @@ body {
 /*-----------------------------------------------------*/
 #action-box {
   float: left;
-  width: 270px;
   height: 120px;
   background-color: hsl(228, 56%, 26%);
   border-radius: 10px 100px 10px 10px;
@@ -100,10 +144,6 @@ body {
 /*-----------------------------------------------------*/
 #storage-info-box {
   float: left;
-  width: 460px;
-  height: 75px;
-  margin-top: 45px;
-  margin-left: 30px;
   padding: 40px;
   background-color: hsl(228, 56%, 26%);
   border-radius: 10px;
@@ -129,7 +169,7 @@ p {
 }
 
 .progress-boundary {
-  width: 454px;
+  width: calc(100% - 6px);
   height: 14px;
   padding: 3px;
   border-radius: 10px;
@@ -140,7 +180,7 @@ p {
 }
 
 .progress-boundary .progress-loaded {
-  width: 80%;
+  width: calc(80% - 4px);
   height: 10px;
   border-radius: 7px;
   padding: 2px;
@@ -166,33 +206,51 @@ p {
 }
 
 /*-----------------------------------------------------*/
+@media only screen and (max-width: 375px) {
+  /* For Mobile (max 375px) */
+
+  .remaining-notify {
+    position: absolute;
+    bottom: -40px;
+    left: 75px;
+  }
+
+}
+
+@media only screen and (min-width: 376px) {
+  /* For Desktop (min 375px) */
+
+  .remaining-notify {
+    position: absolute;
+    top: 0px;
+    right: 40px;
+  }
+
+  .remaining-notify:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 0px;
+    bottom: -20px;
+    border-style: solid;
+    border-top-color: transparent;
+    border-right-color: white;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-top-width: 20px;
+    border-right-width: 20px;
+    border-bottom-width: 20px;
+    border-left-width: 0px
+  }
+
+}
+
 .remaining-notify {
   width: 180px;
   height: 70px;
   background-color: white;
   border-radius: 10px;
-  position: absolute;
-  top: 0px;
-  right: 40px;
-  text-align: center;
-}
-
-.remaining-notify:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  right: 0px;
-  bottom: -20px;
-  border-style: solid;
-  border-top-color: transparent;
-  border-right-color: white;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  border-top-width: 20px;
-  border-right-width: 20px;
-  border-bottom-width: 20px;
-  border-left-width: 0px
 }
 
 .notify-content {
