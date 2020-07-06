@@ -5,27 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/index-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
   <title>Frontend Mentor | Fylo data storage component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <div id="wrapper">
+    <div id="action-box">
+      <img class="logo" src="images/logo.svg" alt="Fylo logo" />
+      <ul>
+        <li><a class="btn-action" id="icon-document"></a></li>
+        <li><a class="btn-action" id="icon-folder"></a></li>
+        <li><a class="btn-action" id="icon-upload"></a></li>
+      </ul>
+    </div>
 
-  You’ve used 815 GB of your storage
+    <div id="storage-info-box">
+      <p>You’ve used <b>815 GB</b> of your storage</p>
 
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
+      <div class="progress-bar">
+        <div class="progress-boundary">
+          <div class="progress-loaded">
+            <div class="progress-current"></div>
+          </div>
+        </div>
+        <p class="min-capacity">0 GB</p>
+        <p class="max-capacity">1000 GB</p>
+      </div>
+
+      <div class="remaining-notify">
+        <div class="notify-content">
+          <h1>185</h1>
+          <p>GB LEFT</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Pham Ich Anh</a>.
   </div>
 </body>
 </html>
